@@ -406,7 +406,7 @@
             </div>
         </div>
 
-        <!-- Submenu for New & Featured -->
+        <!-- Submenu for New & Featured and its menus -->
         <div class="mobile-submenu" id="newFeaturedSubmenu">
             <div class="submenu-header">
                 <div class="left-side back-to-menu">
@@ -418,12 +418,100 @@
             <div class="submenu-content">
                 <h2>New & Featured</h2>
                 <ul>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Bestsellers</a></li>
-                    <li><a href="#">Featured</a></li>
-                    <li><a href="#">Trending</a></li>
-                    <li><a href="#">Shop Icons</a></li>
-                    <li><a href="#">Shop By Sport</a></li>
+                    <li><a href="#" class="toggle-submenu">New Arrivals</a></li>
+                    <li><a href="#" class="toggle-submenu">Bestsellers</a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Featured <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="trendingSubmenu">Trending <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="shopIconsSubmenu">Shop Icons <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="shopBySportSubmenu">Shop By Sport <i class="bx bx-chevron-right"></i></a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Submenu for Featured -->
+        <div class="mobile-submenu" id="featuredSubmenu">
+            <div class="submenu-header">
+                <div class="left-side back-to-menu">
+                    <i class="bx bx-chevron-left back-to-menu"></i>
+                    <span>New & Featured</span>
+                </div>
+                <i class="bi bi-x-lg close-submenu"></i>
+            </div>
+            <div class="submenu-content">
+                <h2>Featured</h2>
+                <ul>
+                    <li><a href="#">New & Upcoming Drops</a></li>
+                    <li><a href="#">SNKRS Launch Calendar</a></li>
+                    <li><a href="#">Member Exclusive</a></li>
+                    <li><a href="#">Customise with Nike By You</a></li>
+                    <li><a href="#">Jordan</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Submenu for Trending -->
+        <div class="mobile-submenu" id="trendingSubmenu">
+            <div class="submenu-header">
+                <div class="left-side back-to-menu">
+                    <i class="bx bx-chevron-left back-to-menu"></i>
+                    <span>New & Featured</span>
+                </div>
+                <i class="bi bi-x-lg close-submenu"></i>
+            </div>
+            <div class="submenu-content">
+                <h2>Trending</h2>
+                <ul>
+                    <li><a href="#">Air Max Dn8</a></li>
+                    <li><a href="#">What's Trending</a></li>
+                    <li><a href="#">Nike 24.7</a></li>
+                    <li><a href="#">Trending Now: Espresso</a></li>
+                    <li><a href="#">Retro Running</a></li>
+                    <li><a href="#">Running Shoe Finder</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Submenu for Shop Icons -->
+        <div class="mobile-submenu" id="shopIconsSubmenu">
+            <div class="submenu-header">
+                <div class="left-side back-to-menu">
+                    <i class="bx bx-chevron-left back-to-menu"></i>
+                    <span>New & Featured</span>
+                </div>
+                <i class="bi bi-x-lg close-submenu"></i>
+            </div>
+            <div class="submenu-content">
+                <h2>Shop Icons</h2>
+                <ul>
+                    <li><a href="#">Lifestyle</a></li>
+                    <li><a href="#">Air Force 1</a></li>
+                    <li><a href="#">Air Jordan 1</a></li>
+                    <li><a href="#">Air Max</a></li>
+                    <li><a href="#">Dunk</a></li>
+                    <li><a href="#">Cortez</a></li>
+                    <li><a href="#">Blazer</a></li>
+                    <li><a href="#">Pegasus</a></li>
+                    <li><a href="#">Vomero</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- Submenu for Shop By Sport -->
+        <div class="mobile-submenu" id="shopBySportSubmenu">
+            <div class="submenu-header">
+                <div class="left-side back-to-menu">
+                    <i class="bx bx-chevron-left back-to-menu"></i>
+                    <span>New & Featured</span>
+                </div>
+                <i class="bi bi-x-lg close-submenu"></i>
+            </div>
+            <div class="submenu-content">
+                <h2>Shop By Sport</h2>
+                <ul>
+                    <li><a href="#">Running</a></li>
+                    <li><a href="#">Basketball</a></li>
+                    <li><a href="#">Football</a></li>
+                    <li><a href="#">Tennis</a></li>
+                    <li><a href="#">Golf</a></li>
+                    <li><a href="#">Training & Gym</a></li>
+                    <li><a href="#">Yoga</a></li>
+                    <li><a href="#">Skateboarding</a></li>
                 </ul>
             </div>
         </div>
@@ -440,12 +528,12 @@
             <div class="submenu-content">
                 <h2>Men</h2>
                 <ul>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Bestsellers</a></li>
-                    <li><a href="#">Shoes</a></li>
-                    <li><a href="#">Clothing</a></li>
-                    <li><a href="#">Shop By Sport</a></li>
-                    <li><a href="#">Accessories and Equipments</a></li>
+                    <li><a href="#" class="toggle-submenu">New Arrivals</a></li>
+                    <li><a href="#" class="toggle-submenu">Bestsellers</a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Shoes <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Clothing <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Shop By Sport <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Accessories and Equipments <i class="bx bx-chevron-right"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -462,12 +550,12 @@
             <div class="submenu-content">
                 <h2>Women</h2>
                 <ul>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Bestsellers</a></li>
-                    <li><a href="#">Shoes</a></li>
-                    <li><a href="#">Clothing</a></li>
-                    <li><a href="#">Shop By Sport</a></li>
-                    <li><a href="#">Accessories and Equipments</a></li>
+                    <li><a href="#" class="toggle-submenu">New Arrivals</a></li>
+                    <li><a href="#" class="toggle-submenu">Bestsellers</a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Shoes <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Clothing <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Shop By Sport <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Accessories and Equipments <i class="bx bx-chevron-right"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -484,14 +572,14 @@
             <div class="submenu-content">
                 <h2>Kids</h2>
                 <ul>
-                    <li><a href="#">New Arrivals</a></li>
-                    <li><a href="#">Bestsellers</a></li>
-                    <li><a href="#">Featured</a></li>
-                    <li><a href="#">Shoes</a></li>
-                    <li><a href="#">Clothing</a></li>
-                    <li><a href="#">Kids By Age</a></li>
-                    <li><a href="#">Shop By Sport</a></li>
-                    <li><a href="#">Accessories and Equipments</a></li>
+                    <li><a href="#" class="toggle-submenu">New Arrivals</a></li>
+                    <li><a href="#" class="toggle-submenu">Bestsellers</a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Featured <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Shoes <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Clothing <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Kids By Age <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Shop By Sport <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Accessories and Equipments <i class="bx bx-chevron-right"></i></a></li>
                 </ul>
             </div>
         </div>
@@ -508,13 +596,13 @@
             <div class="submenu-content">
                 <h2>Sale</h2>
                 <ul>
-                    <li><a href="#">Shop All Sale</a></li>
-                    <li><a href="#">Bestsellers</a></li>
-                    <li><a href="#">Last Chance</a></li>
-                    <li><a href="#">Men's Sale</a></li>
-                    <li><a href="#">Women's Sale</a></li>
-                    <li><a href="#">Kids' Sale</a></li>
-                    <li><a href="#">Shop By Sports</a></li>
+                    <li><a href="#" class="toggle-submenu">Shop All Sale</a></li>
+                    <li><a href="#" class="toggle-submenu">Bestsellers</a></li>
+                    <li><a href="#" class="toggle-submenu">Last Chance</a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Men's Sale <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Women's Sale <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Kids' Sale <i class="bx bx-chevron-right"></i></a></li>
+                    <li class="has-submenu"><a href="#" class="toggle-submenu" data-submenu="featuredSubmenu">Shop By Sports <i class="bx bx-chevron-right"></i></a></li>
                 </ul>
             </div>
         </div>

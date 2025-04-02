@@ -199,6 +199,20 @@
     padding: 5px 0;
 }
 
+/* Styling for submenu items with right arrow */
+
+.has-submenu a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.has-submenu a i {
+    margin-left: 10px;
+    font-size: 22px;
+}
+
 .mobile-submenu {
     position: fixed;
     top: 0;
@@ -255,6 +269,7 @@
 }
 
 .submenu-content h2 {
+    font-family: 'Geist';
     font-size: 24px;
     font-weight: 500;
     margin-bottom: 30px;

@@ -40,14 +40,29 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
+    // Track submenu navigation state
+    let activeSubmenus = [];
+
     // Submenu toggle
     submenuToggles.forEach(toggle => {
         toggle.addEventListener('click', function(e) {
             e.preventDefault();
             const submenuId = this.getAttribute('data-submenu');
             const submenu = document.getElementById(submenuId);
+            
             if (submenu) {
+                // Add current submenu to the stack
+                activeSubmenus.push(submenu);
+                
                 submenu.classList.add('active');
+                
+                // Update the header text for the current submenu if needed
+                // This is useful for deeper nested submenus
+                const parentName = this.textContent.trim().replace(/\s*\n.*$/g, '');
+                const headerSpan = submenu.querySelector('.submenu-header .left-side span');
+                if (headerSpan) {
+                    headerSpan.setAttribute('data-parent', parentName);
+                }
             }
         });
     });
@@ -58,6 +73,11 @@ document.addEventListener('DOMContentLoaded', function() {
             const submenu = this.closest('.mobile-submenu');
             if (submenu) {
                 submenu.classList.remove('active');
+                
+                // Remove current submenu from stack
+                if (activeSubmenus.length > 0) {
+                    activeSubmenus.pop();
+                }
             }
         });
     });
@@ -65,10 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Close button in submenu
     closeSubmenuButtons.forEach(button => {
         button.addEventListener('click', function() {
-            const submenu = this.closest('.mobile-submenu');
-            if (submenu) {
+            // Close all submenus
+            document.querySelectorAll('.mobile-submenu').forEach(submenu => {
                 submenu.classList.remove('active');
-            }
+            });
+            
+            // Reset submenu navigation state
+            activeSubmenus = [];
+            
             // Close main menu as well
             if (mobileMenu) {
                 mobileMenu.classList.remove('active');
