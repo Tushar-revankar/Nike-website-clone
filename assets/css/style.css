@@ -374,18 +374,24 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 0px 48px;
+    padding: 0 48px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto;
+    max-width: 1800px;
 }
 
 .hero-section1-image {
     width: 100%;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .hero-section1-image img {
     width: 100%;
-    height: 517px;
+    height: auto; 
+    min-height: 350px; 
+    max-height: 517px;
     object-fit: cover;
     border-radius: 1rem;
 }
@@ -397,11 +403,16 @@ body {
     justify-content: center;
     color: #000;
     text-align: center;
+    width: 100%;
+    max-width: 800px; 
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .hero-section1-desc h1 {
     font-family: helvetica;
-    font-size: 55px;
+    font-size: clamp(32px, 5vw, 55px); 
     font-weight: bold;
     margin: 0;
     line-height: 1.2;
@@ -409,14 +420,15 @@ body {
 }
 
 .hero-section1-desc p {
-    font-size: 16px;
+    font-size: clamp(14px, 2vw, 16px); 
     margin: 10px 0 20px;
     color: #000;
+    max-width: 600px; 
 }
 
 .hero1-button {
-    padding: 12px 20px;
-    font-size: 16px;
+    padding: clamp(10px, 2vw, 12px) clamp(16px, 3vw, 20px); 
+    font-size: clamp(14px, 2vw, 16px); 
     font-weight: bold;
     color: #fff;
     background-color: #000;
@@ -426,11 +438,48 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     outline: none;
+    transition: all 0.3s ease;
+    white-space: nowrap;
 }
 
 .hero1-button:hover {
     background-color: #444444;
     transform: translateY(-2px);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+    .hero-section1 {
+        padding: 0 48px;
+    }
+    
+    .hero-section1-desc {
+        padding: 0 16px;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .hero-section1 {
+        padding: 0 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hero-section1-desc h1 {
+        margin-top: 24px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .hero-section1-image img {
+        min-height: 560px;
+    }
+
+    .hero-section1-desc {
+        padding: 0px;
+        align-items: flex-start;
+    }
 }
 
 /* section 1 */
