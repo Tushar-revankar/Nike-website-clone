@@ -15,20 +15,16 @@ nike-app-clone/
 ├── assets/
 │   ├── css/
 │   │   ├── style.css          # Main stylesheet
+│   │   ├── mobile-menu.css    # Mobile menu styles
 │   │   ├── footer.css         # Footer-specific styles
 │   │   └── back-to-top.css    # Back-to-top button styles
 │   ├── js/
 │   │   ├── script.js          # Main JavaScript file
+│   │   ├── mobile-menu.js     # Mobile menu functionality
 │   │   ├── components.js      # Component initialization
 │   │   ├── footer.js          # Footer functionality
 │   │   └── back-to-top.js     # Back-to-top button functionality
 │   ├── images/
-│   │   ├── banner/            # Banner images
-│   │   ├── screenshots/       # Screenshots for documentation
-│   │   ├── section1/          # Section 1 images
-│   │   ├── section2/          # Section 2 images
-│   │   ├── section3/          # Section 3 images
-│   │   ├── section4/          # Section 4 images
 │   └── favicon/               # Favicon files
 └── components/
     ├── footer.html            # Footer component
