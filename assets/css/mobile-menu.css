@@ -283,7 +283,7 @@
 
 .submenu-content ul li {
     cursor: pointer;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 .submenu-content ul li a {
@@ -291,6 +291,14 @@
     color: #707072;
     font-size: 18px;
     font-weight: 500;
+}
+
+.last-menu-item {
+    font-family: 'Geist';
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 0;
 }
 
 /* responsive */
