@@ -10,6 +10,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const backButtons = document.querySelectorAll('.back-to-menu');
     const closeSubmenuButtons = document.querySelectorAll('.close-submenu');
 
+    // Function to close the mobile menu and reset state
+    const closeMainMenu = () => {
+        mobileMenu.classList.remove('active');
+        if (mobileMenuOverlay) {
+            mobileMenuOverlay.classList.remove('active');
+        }
+        document.body.style.overflow = '';
+        
+        document.querySelectorAll('.mobile-submenu').forEach(submenu => {
+            submenu.classList.remove('active');
+        });
+    };
+
+    // Function to check viewport width and close menu if needed
+    const checkViewportWidth = () => {
+        if (window.innerWidth > 960) { // 960px is the mobile breakpoint
+            closeMainMenu();
+        }
+    };
+
+    window.addEventListener('resize', checkViewportWidth);
+
     // Main menu toggle
     if (menuToggle && closeMenu && mobileMenu) {
         menuToggle.addEventListener('click', function() {
@@ -20,19 +42,6 @@ document.addEventListener('DOMContentLoaded', function() {
             document.body.style.overflow = 'hidden';
         });
 
-        const closeMainMenu = () => {
-            mobileMenu.classList.remove('active');
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.classList.remove('active');
-            }
-            document.body.style.overflow = '';
-            
-            // Close any open submenus
-            document.querySelectorAll('.mobile-submenu').forEach(submenu => {
-                submenu.classList.remove('active');
-            });
-        };
-
         closeMenu.addEventListener('click', closeMainMenu);
 
         if (mobileMenuOverlay) {
@@ -40,7 +49,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Track submenu navigation state
     let activeSubmenus = [];
 
     // Submenu toggle
@@ -94,13 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
             activeSubmenus = [];
             
             // Close main menu as well
-            if (mobileMenu) {
-                mobileMenu.classList.remove('active');
-            }
-            if (mobileMenuOverlay) {
-                mobileMenuOverlay.classList.remove('active');
-            }
-            document.body.style.overflow = '';
+            closeMainMenu();
         });
     });
 });
