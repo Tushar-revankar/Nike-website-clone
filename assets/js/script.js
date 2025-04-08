@@ -6,6 +6,8 @@ let isMobileView = window.innerWidth <= 960;
 // Update mobile view status on resize
 window.addEventListener('resize', function() {
     isMobileView = window.innerWidth <= 960;
+    // Reinitialize scroll containers on resize
+    initializeAllScrollContainers();
 });
 
 // Header scroll behavior management
@@ -80,25 +82,48 @@ window.addEventListener('scroll', function() {
 });
 
 // Image Carousel/Scroll Container Implementation 
-function initializeScrollContainer(sectionNum, scrollAmount) {
+
+function initializeScrollContainer(sectionNum) {
     const imageContainer = document.getElementById(`imageScrollContainers${sectionNum}`);
     const leftArrow = document.getElementById(`leftArrows${sectionNum}`);
     const rightArrow = document.getElementById(`rightArrows${sectionNum}`);
 
+    if (!imageContainer || !leftArrow || !rightArrow) return;
+
+    function calculateScrollAmount() {
+        const containerWidth = imageContainer.clientWidth;
+        const itemWidth = imageContainer.children[0]?.offsetWidth || 0;
+        const gap = 12; 
+
+        // For smaller screens, scroll one item at a time
+        if (window.innerWidth <= 600) {
+            return itemWidth + gap;
+        }
+        
+        // For larger screens, try to scroll multiple items while keeping them aligned
+        const itemsPerView = Math.floor(containerWidth / (itemWidth + gap));
+        return (itemWidth + gap) * Math.max(1, Math.floor(itemsPerView / 2));
+    }
+
     function updateArrows() {
         const maxScrollLeft = imageContainer.scrollWidth - imageContainer.clientWidth;
 
-        if (imageContainer.scrollLeft === 0) {
+        // At the start
+        if (imageContainer.scrollLeft <= 0) {
             leftArrow.style.backgroundColor = '#cdcdcd';
             leftArrow.style.color = '#000';
             rightArrow.style.backgroundColor = '#000';
             rightArrow.style.color = '#fff';
-        } else if (imageContainer.scrollLeft >= maxScrollLeft - 1) {
+        } 
+        // At the end
+        else if (imageContainer.scrollLeft >= maxScrollLeft - 1) {
             rightArrow.style.backgroundColor = '#cdcdcd';
             rightArrow.style.color = '#000';
             leftArrow.style.backgroundColor = '#000';
             leftArrow.style.color = '#fff';
-        } else {
+        } 
+        // In the middle
+        else {
             leftArrow.style.backgroundColor = '#e7e7e7';
             leftArrow.style.color = '#000';
             rightArrow.style.backgroundColor = '#e7e7e7';
@@ -106,27 +131,64 @@ function initializeScrollContainer(sectionNum, scrollAmount) {
         }
     }
 
-    leftArrow.addEventListener('click', () => {
+    function handleScroll() {
+        requestAnimationFrame(updateArrows);
+    }
+
+    function scrollLeft() {
+        const scrollAmount = calculateScrollAmount();
         imageContainer.scrollBy({
             left: -scrollAmount,
             behavior: 'smooth'
         });
-    });
+    }
 
-    rightArrow.addEventListener('click', () => {
+    function scrollRight() {
+        const scrollAmount = calculateScrollAmount();
         imageContainer.scrollBy({
             left: scrollAmount,
             behavior: 'smooth'
         });
-    });
+    }
 
-    imageContainer.addEventListener('scroll', updateArrows);
+    // Remove existing event listeners if any
+    leftArrow.removeEventListener('click', scrollLeft);
+    rightArrow.removeEventListener('click', scrollRight);
+    imageContainer.removeEventListener('scroll', handleScroll);
+
+    // Add new event listeners
+    leftArrow.addEventListener('click', scrollLeft);
+    rightArrow.addEventListener('click', scrollRight);
+    imageContainer.addEventListener('scroll', handleScroll);
+
     updateArrows();
+
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    imageContainer.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    imageContainer.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        const difference = touchStartX - touchEndX;
+        
+        if (Math.abs(difference) > 50) {
+            if (difference > 0) {
+                scrollRight();
+            } else {
+                scrollLeft();
+            }
+        }
+    }, { passive: true });
 }
 
-// Initialize all scroll containers
-document.addEventListener('DOMContentLoaded', function() {
-    initializeScrollContainer(2, 750);  // Section 2
-    initializeScrollContainer(3, 470);  // Section 3
-    initializeScrollContainer(4, 470);  // Section 4
-});
+function initializeAllScrollContainers() {
+    // Initialize for all sections
+    [2, 3, 4].forEach(sectionNum => {
+        initializeScrollContainer(sectionNum);
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initializeAllScrollContainers);
