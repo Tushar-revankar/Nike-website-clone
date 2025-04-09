@@ -2,9 +2,23 @@
 
 A responsive clone of the Nike official website built with HTML, CSS, and JavaScript.
 
+![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
+
 ## Project Overview
 
 This project is a frontend implementation of the Nike website, featuring a responsive design that adapts to different screen sizes (desktop and mobile). The website includes various sections such as product showcases, navigation menus, and a footer with links to different Nike resources.
+
+## Features
+
+- Responsive design that adapts to desktop and mobile views
+- Dynamic header with scroll behaviors
+- Product showcases with interactive elements
+- Footer with Nike resources, help links, and company information
+- Back-to-top functionality for easy navigation
+- Component-based architecture for better code organization
+- Mobile-friendly navigation menu
 
 ## Project Structure
 
@@ -31,28 +45,24 @@ nike-app-clone/
     └── back-to-top.html       # Back-to-top button component
 ```
 
-## Features
-
-- Responsive design that adapts to desktop and mobile views
-- Dynamic header with scroll behaviors
-- Product showcases with interactive elements
-- Footer with Nike resources, help links, and company information
-- Back-to-top functionality for easy navigation
-- Component-based architecture for better code organization
-
 ## Technologies Used
 
-- HTML5
-- CSS3
-- JavaScript (Vanilla)
-- Boxicons for icons
-- Font Awesome for additional icons
-- Bootstrap Icons
+- **HTML5** - For structure and content
+- **CSS3** - For styling and animations
+- **JavaScript (ES6+)** - For interactivity and dynamic content
+- **Boxicons** (v2.1.4) - For high-quality icons
+- **Font Awesome** (v6.4.0) - For additional icons
+- **Bootstrap Icons** (v1.10.5)
 
-## Usage
+## Installation
 
 1. Clone the repository
-2. Open `index.html` in your browser to view the website
+   ```bash
+   git clone https://github.com/yourusername/nike-app-clone.git
+   cd nike-app-clone
+   ```
+
+2. No build steps required! Simply open `index.html` in your browser to view the website.
 
 ## Implementation Details
 
@@ -68,12 +78,14 @@ The website uses a component-based approach with HTML components like:
 - **Header Scroll Behavior**: Changes header appearance based on scroll direction
 - **Responsive Design**: Adapts layout for desktop and mobile views
 - **Component Loading**: Dynamically loads HTML components
+- **Smooth Scrolling**: Enhances user experience when navigating
 
 ### Styling
 
 - Organized CSS files for better maintenance
 - Responsive design with appropriate breakpoints
 - Custom styling to match Nike's brand identity
+- Media queries for different screen sizes
 
 ## Browser Compatibility
 
