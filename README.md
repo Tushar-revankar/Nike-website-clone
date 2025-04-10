@@ -103,6 +103,14 @@ The website is designed to work on modern browsers including:
 ### Homepage Dropdown
 ![Homepage Dropdown](assets/images/screenshots/homepage-dropdown.png)
 
+### Mainpage
+![Mainpage](assets/images/screenshots/mainpage.png)
+
+### Side Menu
+![Side Menu](assets/images/screenshots/sidemenu.png)
+
+### Responsive Design
+![Responsive Design](assets/images/screenshots/responsive-menu.png)
 
 ## License
 
