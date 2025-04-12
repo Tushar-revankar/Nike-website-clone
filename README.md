@@ -60,8 +60,8 @@ nike-app-clone/
 
 1. Clone the repository
    ```bash
-   git clone https://github.com/yourusername/nike-app-clone.git
-   cd nike-app-clone
+    git clone https://github.com/Tushar-revankar/Nike-website-clone.git
+    cd Nike-website-clone
    ```
 
 2. No build steps required! Simply open `index.html` in your browser to view the website.
